@@ -35,7 +35,7 @@ function execPromise(command, cwd) {
     });
   });
 }
-
+console.log("process.env:",process.env);
 const { INIT_CWD, NODE_ENV, DEBUG_BUILD, ENV } = process.env,
       SRC = `${INIT_CWD}/source`,
       DIST  = `${INIT_CWD}/dist`,
@@ -52,15 +52,15 @@ const { INIT_CWD, NODE_ENV, DEBUG_BUILD, ENV } = process.env,
       buildConfig = requireJson(`${INIT_CWD}/build-config`),
       BRAND_CONFIG = requireJson(`${SRC}/config/brand.json`),
       {
-        brandName: BRAND_NAME, 
+        brandName: BRAND_NAME,
         prodUrl: PROD_URL,
-        releaseUrl: RELEASE_URL, 
+        releaseUrl: RELEASE_URL,
         demoUrl: DEMO_URL
       } = BRAND_CONFIG,
 
       TIME_STAMP = moment().format('YYYY-MM-DD hh:mm:ss'),
 
-      
+
       SITE_URL = ENV && BRAND_CONFIG[`${ENV}Url`] || PROD_URL,
       PLUGINS = gulpLoadPlugins({
         rename: {
@@ -68,13 +68,13 @@ const { INIT_CWD, NODE_ENV, DEBUG_BUILD, ENV } = process.env,
         }
       }),
 
-      CONFIG = _.assign(coreConfig, buildConfig, 
+      CONFIG = _.assign(coreConfig, buildConfig,
                {SRC, BRAND_NAME, DIST, BUILD, IS_DEV, BUILD_TASKS,
                 IS_PROD, DEST, SITE_URL, TIME_STAMP, packageJson,
                 SHOULD_UPLOAD: PLUGINS.util.env.upload || IS_PROD});
 
-let taskDependencies = [], 
-    enabledTaskFiles = [], 
+let taskDependencies = [],
+    enabledTaskFiles = [],
     taskSequences = {};
 
 _.each(buildConfig.tasks, (sequence, taskName) => {
@@ -115,9 +115,9 @@ gulp.task("install-tasks", done => {
 
     CONFIG.taskSequences = taskSequences;
     _.assign(PLUGINS, {
-      requireJson, 
-      cloneRepo, 
-      errorHandler, 
+      requireJson,
+      cloneRepo,
+      errorHandler,
       messageHandler,
       execPromise
     });
@@ -173,12 +173,12 @@ gulp.task('git-branch', (done) => {
   }
 
   const gitRepo = git(process.env.INIT_CWD);
-  gitRepo.branch((err, branchInfo) => {  
+  gitRepo.branch((err, branchInfo) => {
     if (err || (CONFIG.IS_DEV && branchInfo.name === 'master')) {
       messageHandler({
         plugin: "core",
         relativePath: "git-branch.gulp.js",
-        formatted: err || "Please don't develop on master.\n" + 
+        formatted: err || "Please don't develop on master.\n" +
                    " Create a new branch for each development feature."
       }, "fatal");
     }
