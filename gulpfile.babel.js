@@ -172,6 +172,7 @@ gulp.task('git-branch', (done) => {
     return done();
   }
 
+if(IS_DEV){
   const gitRepo = git('./');
   gitRepo.branch((err, branchInfo) => {
     if (err || (CONFIG.IS_DEV && branchInfo.name === 'master')) {
@@ -187,6 +188,7 @@ gulp.task('git-branch', (done) => {
     CONFIG.IS_MASTER = branchInfo.name === 'master';
     done();
   });
+}
 });
 
 /*gulp.task('test', () => {
