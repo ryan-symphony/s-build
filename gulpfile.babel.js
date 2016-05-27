@@ -35,7 +35,7 @@ function execPromise(command, cwd) {
     });
   });
 }
-console.log("process.env:",process.env);
+// console.log("process.env:",process.env);
 const { INIT_CWD, NODE_ENV, DEBUG_BUILD, ENV } = process.env,
       SRC = `${INIT_CWD}/source`,
       DIST  = `${INIT_CWD}/dist`,
@@ -172,7 +172,7 @@ gulp.task('git-branch', (done) => {
     return done();
   }
 
-  const gitRepo = git(process.env.INIT_CWD);
+  const gitRepo = git();
   gitRepo.branch((err, branchInfo) => {
     if (err || (CONFIG.IS_DEV && branchInfo.name === 'master')) {
       messageHandler({
