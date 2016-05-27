@@ -77,14 +77,26 @@ let taskDependencies = [],
     enabledTaskFiles = [],
     taskSequences = {};
 
-_.each(buildConfig.tasks, (sequence, taskName) => {
-  gulp.task(taskName, ['register-tasks', 'git-branch'], done => {
-    runSequence(
-      ...sequence,
-      done
-    );
+if(IS_DEV){
+  _.each(buildConfig.tasks, (sequence, taskName) => {
+    gulp.task(taskName, ['register-tasks', 'git-branch'], done => {
+      runSequence(
+        ...sequence,
+        done
+      );
+    });
   });
-});
+}else{
+    _.each(buildConfig.tasks, (sequence, taskName) => {
+    gulp.task(taskName, ['register-tasks'], done => {
+      runSequence(
+        ...sequence,
+        done
+      );
+    });
+  });
+}
+
 
 gulp.task("install-tasks", done => {
   const enableType = IS_PROD ? 'deployEnabled' : 'devEnabled';
