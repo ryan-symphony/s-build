@@ -77,7 +77,6 @@ let taskDependencies = [],
     enabledTaskFiles = [],
     taskSequences = {};
 
-if(IS_DEV){
   _.each(buildConfig.tasks, (sequence, taskName) => {
     gulp.task(taskName, ['register-tasks', 'git-branch'], done => {
       runSequence(
@@ -86,16 +85,6 @@ if(IS_DEV){
       );
     });
   });
-}else{
-    _.each(buildConfig.tasks, (sequence, taskName) => {
-    gulp.task(taskName, ['register-tasks'], done => {
-      runSequence(
-        ...sequence,
-        done
-      );
-    });
-  });
-}
 
 
 gulp.task("install-tasks", done => {
@@ -183,8 +172,9 @@ gulp.task('git-branch', (done) => {
     CONFIG.IS_MASTER = process.env.CIRCLE_BRANCH === 'master';
     return done();
   }
-
-if(IS_DEV){
+  if(!IS_DEV){
+    return done();
+  }
   const gitRepo = git('./');
   gitRepo.branch((err, branchInfo) => {
     if (err || (CONFIG.IS_DEV && branchInfo.name === 'master')) {
@@ -200,7 +190,6 @@ if(IS_DEV){
     CONFIG.IS_MASTER = branchInfo.name === 'master';
     done();
   });
-}
 });
 
 /*gulp.task('test', () => {
