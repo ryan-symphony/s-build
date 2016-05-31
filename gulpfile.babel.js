@@ -78,7 +78,7 @@ let taskDependencies = [],
     taskSequences = {};
 
   _.each(buildConfig.tasks, (sequence, taskName) => {
-    gulp.task(taskName, ['register-tasks', 'git-branch'], done => {
+    gulp.task(taskName, ['register-tasks'], done => {
       runSequence(
         ...sequence,
         done
