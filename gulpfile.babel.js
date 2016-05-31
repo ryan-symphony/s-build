@@ -40,6 +40,7 @@ const { INIT_CWD, NODE_ENV, DEBUG_BUILD, ENV } = process.env,
       SRC = `${INIT_CWD}/source`,
       DIST  = `${INIT_CWD}/dist`,
       BUILD = `${INIT_CWD}/build`,
+      TEST = `${INIT_CWD}/test`,
       BUILD_TASKS = `${INIT_CWD}/build-tasks`,
 
       IS_PROD = NODE_ENV === 'production',
@@ -69,7 +70,7 @@ const { INIT_CWD, NODE_ENV, DEBUG_BUILD, ENV } = process.env,
       }),
 
       CONFIG = _.assign(coreConfig, buildConfig,
-               {SRC, BRAND_NAME, DIST, BUILD, IS_DEV, BUILD_TASKS,
+               {SRC, BRAND_NAME, DIST, TEST, BUILD, IS_DEV, BUILD_TASKS,
                 IS_PROD, DEST, SITE_URL, TIME_STAMP, packageJson,
                 SHOULD_UPLOAD: PLUGINS.util.env.upload || IS_PROD});
 
