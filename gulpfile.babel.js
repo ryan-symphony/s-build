@@ -79,7 +79,7 @@ let taskDependencies = [],
 
   _.each(buildConfig.tasks, (sequence, taskName) => {
     console.log("taskName",taskName);
-    gulp.task(taskName, ['register-tasks'], done => {
+    gulp.task(taskName, ['register-tasks','git-branch'], done => {
       runSequence(
         ...sequence,
         done
@@ -174,7 +174,12 @@ gulp.task('git-branch', (done) => {
     return done();
   }
 
-if(IS_DEV){
+  if(!IS_DEV){
+    return done();
+  }
+
+  //TOFIX: git() does not work on heroku
+
   const gitRepo = git('./');
   gitRepo.branch((err, branchInfo) => {
     if (err || (CONFIG.IS_DEV && branchInfo.name === 'master')) {
@@ -190,7 +195,6 @@ if(IS_DEV){
     CONFIG.IS_MASTER = branchInfo.name === 'master';
     done();
   });
-}
 });
 
 /*gulp.task('test', () => {
