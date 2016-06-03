@@ -77,6 +77,34 @@ ___
 ___
 
 
+## Example circle.yml ##
+
+```
+machine:
+ node:
+  version: 5.5.0
+dependencies:
+ pre:
+  - npm install npm@3 -g
+  - git config --global user.email "ci@symphonycommerce.com"
+  - git config --global user.name "circleci"
+ cache_directories:
+  - "build-tasks"
+  - "brand-entry"
+deployment:
+ production:
+  branch: master
+  commands:
+   - ./node_modules/.bin/gulp deploy
+ release:
+  branch: release
+  commands:
+   - ENV=release ./node_modules/.bin/gulp dev --upload
+ development:
+  branch: /^((?!master).)*$/
+  commands:
+   - ./node_modules/.bin/gulp dev --upload
+```
 
 
 ### Example "build-config.json" ###
