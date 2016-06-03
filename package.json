@@ -1,5 +1,5 @@
 {
-  "name": "sy-build",
+  "name": "s-build",
   "dependencies": {
     "async": "^2.0.0-rc.3",
     "babel-core": "^6.7.4",
@@ -28,13 +28,13 @@
     "node-notifier": "^4.5.0",
     "node-symphony": "symphony-integrations/node-symphony"
   },
-  "description": "Web dev task automation using Gulp & Circle CI for kittydemo",
+  "description": "Gulp Bootsrapping Module",
   "devDependencies": {},
-  "homepage": "https://github.com/symphony-brands/kittydemo-externaltile#readme",
+  "homepage": "https://github.com/symphony-integrations/s-build#readme",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/symphony-brands/kittydemo-externaltile.git"
+    "url": "git+https://github.com/symphony-integrations/s-build.git"
   },
   "version": "2.0.0"
 }
