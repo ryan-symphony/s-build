@@ -82,22 +82,49 @@ Some Example Build Tasks:
 ##Brand Build Tasks##
 - https://github.com/symphony-snippets/taskgroup-new-brand
 
+Sets up New Brand folder structure, creates brand-repo, creates symphony-api user
+
 - https://github.com/symphony-snippets/taskgroup-dev-brand
+
+Bundles JS, CSS, Tiles, Snippets, and BrowserSync
+
 - https://github.com/symphony-snippets/taskgroup-deploy-brand
 
+Uploads bundles and cache-busts headerSnippet
+
 - https://github.com/symphony-snippets/taskgroup-dev-snippets
+
+Will Clone a snippet to do development work and then run "dev-brand" tasks on your current brand
+
 - https://github.com/symphony-snippets/taskgroup-dev-tiles
+
+Will Compile your tile into html/hbs file for use with External Tile
+
 - https://github.com/symphony-snippets/taskgroup-dev-templates
 
+Rendereds hbs files for use with Trungs "prototype-hbs-compile" module
+
 - https://github.com/symphony-snippets/taskgroup-webdev-images
+
+Optimizes images in specific folder
+
 - https://github.com/symphony-snippets/taskgroup-webdev-sprites
+
+Creates sprites and updates scss file
 
 ##Manage Build Tasks##
 - https://github.com/symphony-snippets/taskgroup-dev-manager
+
+Bundles together manage angular JS, CSS, and BrowserSync
+
 - https://github.com/symphony-snippets/taskgroup-deploy-manager
+
+Runs tests and uploads manager HTML, CSS, JS to S3 via CircleCi 
 
 ##NodeApp Tasks##
 - https://github.com/symphony-snippets/taskgroup-dev-nodeapp
+
+Compiles Typescript => ES5 and runs tests / test coverage
 
 
 
