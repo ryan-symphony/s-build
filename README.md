@@ -4,7 +4,82 @@ S-Build is a bootstrapping module to help standardize and share our gulp build t
 
 All task groups include their own dependencies and all are configured by a "build-config.json" file in your projects root directory.  This config file will tell "s-build" which taskgroups to use and if they are optional tasks, when to run them.  
 
-Example "build-config.json"
+Some Example Build Tasks:
+
+##Brand Build Tasks##
+- https://github.com/symphony-snippets/taskgroup-new-brand
+
+---> Sets up New Brand folder structure, creates brand-repo, creates symphony-api user
+___
+
+- https://github.com/symphony-snippets/taskgroup-dev-brand
+
+---> Bundles JS, CSS, Tiles, Snippets, and BrowserSync
+___
+
+- https://github.com/symphony-snippets/taskgroup-deploy-brand
+
+---> Uploads bundles and cache-busts headerSnippet
+___
+
+
+
+
+- https://github.com/symphony-snippets/taskgroup-dev-snippets
+
+---> Will Clone a snippet to do development work and then run "dev-brand" tasks on your current brand
+___
+
+- https://github.com/symphony-snippets/taskgroup-dev-tiles
+
+---> Will Compile your tile into html/hbs file for use with External Tile
+___
+
+- https://github.com/symphony-snippets/taskgroup-dev-templates
+
+---> Rendereds hbs files for use with Trungs "prototype-hbs-compile" module
+___
+
+
+
+
+- https://github.com/symphony-snippets/taskgroup-webdev-images
+
+---> Optimizes images in specific folder
+___
+
+- https://github.com/symphony-snippets/taskgroup-webdev-sprites
+
+---> Creates sprites and updates scss file
+___
+
+
+
+
+##Manage Build Tasks##
+- https://github.com/symphony-snippets/taskgroup-dev-manager
+
+---> Bundles together manage angular JS, CSS, and BrowserSync
+___
+
+- https://github.com/symphony-snippets/taskgroup-deploy-manager
+
+---> Runs tests and uploads manager HTML, CSS, JS to S3 via CircleCi 
+___
+
+
+
+
+##NodeApp Tasks##
+- https://github.com/symphony-snippets/taskgroup-dev-nodeapp
+
+---> Compiles Typescript => ES5 and runs tests / test coverage
+___
+
+
+
+
+### Example "build-config.json" ###
 
 ```
 {
@@ -74,59 +149,6 @@ require("babel-register")({
 
 var gulpTasks =  require('s-build/gulpfile.babel.js');
 ```
-
-
-
-Some Example Build Tasks:
-
-##Brand Build Tasks##
-- https://github.com/symphony-snippets/taskgroup-new-brand
-
-Sets up New Brand folder structure, creates brand-repo, creates symphony-api user
-
-- https://github.com/symphony-snippets/taskgroup-dev-brand
-
-Bundles JS, CSS, Tiles, Snippets, and BrowserSync
-
-- https://github.com/symphony-snippets/taskgroup-deploy-brand
-
-Uploads bundles and cache-busts headerSnippet
-
-- https://github.com/symphony-snippets/taskgroup-dev-snippets
-
-Will Clone a snippet to do development work and then run "dev-brand" tasks on your current brand
-
-- https://github.com/symphony-snippets/taskgroup-dev-tiles
-
-Will Compile your tile into html/hbs file for use with External Tile
-
-- https://github.com/symphony-snippets/taskgroup-dev-templates
-
-Rendereds hbs files for use with Trungs "prototype-hbs-compile" module
-
-- https://github.com/symphony-snippets/taskgroup-webdev-images
-
-Optimizes images in specific folder
-
-- https://github.com/symphony-snippets/taskgroup-webdev-sprites
-
-Creates sprites and updates scss file
-
-##Manage Build Tasks##
-- https://github.com/symphony-snippets/taskgroup-dev-manager
-
-Bundles together manage angular JS, CSS, and BrowserSync
-
-- https://github.com/symphony-snippets/taskgroup-deploy-manager
-
-Runs tests and uploads manager HTML, CSS, JS to S3 via CircleCi 
-
-##NodeApp Tasks##
-- https://github.com/symphony-snippets/taskgroup-dev-nodeapp
-
-Compiles Typescript => ES5 and runs tests / test coverage
-
-
 
 This automated build is designed for brand sitefront development on the Symphony Commerce platform. A few tasks that this build handles:
 
