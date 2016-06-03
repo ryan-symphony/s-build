@@ -81,7 +81,7 @@ Some Example Build Tasks:
 
 ##Brand Build Tasks##
 - https://github.com/symphony-snippets/taskgroup-new-brand
-- 
+
 - https://github.com/symphony-snippets/taskgroup-dev-brand
 - https://github.com/symphony-snippets/taskgroup-deploy-brand
 
