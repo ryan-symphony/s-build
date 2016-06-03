@@ -11,22 +11,22 @@ Taskgroups are considered a "task" if they have ".gulp.js" in the name of their 
 Some Example Build Tasks:
 
 ##Brand Build Tasks##
-https://github.com/symphony-snippets/taskgroup-dev-brand
-https://github.com/symphony-snippets/taskgroup-deploy-brand
+- https://github.com/symphony-snippets/taskgroup-dev-brand
+- https://github.com/symphony-snippets/taskgroup-deploy-brand
 
-https://github.com/symphony-snippets/taskgroup-dev-snippets
-https://github.com/symphony-snippets/taskgroup-dev-tiles
-https://github.com/symphony-snippets/taskgroup-dev-templates
+- https://github.com/symphony-snippets/taskgroup-dev-snippets
+- https://github.com/symphony-snippets/taskgroup-dev-tiles
+- https://github.com/symphony-snippets/taskgroup-dev-templates
 
-https://github.com/symphony-snippets/taskgroup-webdev-images
-https://github.com/symphony-snippets/taskgroup-webdev-sprites
+- https://github.com/symphony-snippets/taskgroup-webdev-images
+- https://github.com/symphony-snippets/taskgroup-webdev-sprites
 
 ##Manage Build Tasks##
-https://github.com/symphony-snippets/taskgroup-dev-manager
-https://github.com/symphony-snippets/taskgroup-deploy-manager
+- https://github.com/symphony-snippets/taskgroup-dev-manager
+- https://github.com/symphony-snippets/taskgroup-deploy-manager
 
 ##NodeApp Tasks##
-https://github.com/symphony-snippets/taskgroup-dev-nodeapp
+- https://github.com/symphony-snippets/taskgroup-dev-nodeapp
 
 
 
