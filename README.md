@@ -4,6 +4,57 @@ S-Build is a bootstrapping module to help standardize and share our gulp build t
 
 All task groups include their own dependencies and all are configured by a "build-config.json" file in your projects root directory.  This config file will tell "s-build" which taskgroups to use and if they are optional tasks, when to run them.  
 
+Example "build-config.json"
+
+```
+{
+  "tasks": {
+    "dev": ["dev-brand:_sequence"],
+    "test": ["dev-brand:test"],
+    "deploy": ["deploy-brand:_sequence"],
+    "create-brand": ["new-brand:_sequence"]
+  },
+  "taskGroups": {
+    "new-brand": false, 
+    "dev-brand": true,
+    "deploy-brand": {
+      "devEnabled": true,
+      "deployEnabled": false
+    },
+    "dev-templates": {
+      "devEnabled": false,
+      "deployEnabled": false,
+      "sequenceWhen": "beforeBundle"
+    },
+    "new-snippet": {
+      "devEnabled": true,
+      "deployEnabled": false,
+      "sequenceWhen": "afterBundle"
+    }, 
+    "dev-snippets": {
+      "devEnabled": true,
+      "deployEnabled": false,
+      "sequenceWhen": "afterBundle"
+    },
+    "dev-tiles": {
+      "devEnabled": true,
+      "deployEnabled": true,
+      "sequenceWhen": "afterBundle"
+    },
+    "webdev-images": {
+      "devEnabled": false,
+      "deployEnabled": false,
+      "sequenceWhen": "afterBundle"
+    },
+    "webdev-sprites": {
+      "devEnabled": false,
+      "deployEnabled": false,
+      "sequenceWhen": "afterBundle"
+    }
+  }
+}
+```
+
 Most all task groups will include a "_sequence.gulp.js" file.  This is usually the entry of the task group and will descripe the sequence of events the taskgroup will take.
 
 Taskgroups are considered a "task" if they have ".gulp.js" in the name of their file.  If they do not have this, they are not registered as a task.
