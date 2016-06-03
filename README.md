@@ -8,6 +8,24 @@ Most all task groups will include a "_sequence.gulp.js" file.  This is usually t
 
 Taskgroups are considered a "task" if they have ".gulp.js" in the name of their file.  If they do not have this, they are not registered as a task.
 
+To trigger s-build, you also need a "gulpfile.js" in your projects root directory...  It should looke like this:
+
+```
+require("babel-register")({
+  presets: ["es2015"],
+  only: function(filename) {
+    return /s-build\/gulpfile\.babel.\js/.test(filename) || 
+           /\.gulp\.js/.test(filename) || 
+           /\.es6\.js/.test(filename) || 
+           /\.spec\.js/.test(filename);
+  }
+});
+
+var gulpTasks =  require('s-build/gulpfile.babel.js');
+```
+
+
+
 Some Example Build Tasks:
 
 ##Brand Build Tasks##
