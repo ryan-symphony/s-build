@@ -1,4 +1,34 @@
-# Symphony Commerce Brand Build
+# Symphony Build (S-Build)
+
+S-Build is a bootstrapping module to help standardize and share our gulp build tasks.  
+
+All task groups include their own dependencies and all are configured by a "build-config.json" file in your projects root directory.  This config file will tell "s-build" which taskgroups to use and if they are optional tasks, when to run them.  
+
+Most all task groups will include a "_sequence.gulp.js" file.  This is usually the entry of the task group and will descripe the sequence of events the taskgroup will take.
+
+Taskgroups are considered a "task" if they have ".gulp.js" in the name of their file.  If they do not have this, they are not registered as a task.
+
+Some Example Build Tasks:
+
+##Brand Build Tasks##
+https://github.com/symphony-snippets/taskgroup-dev-brand
+https://github.com/symphony-snippets/taskgroup-deploy-brand
+
+https://github.com/symphony-snippets/taskgroup-dev-snippets
+https://github.com/symphony-snippets/taskgroup-dev-tiles
+https://github.com/symphony-snippets/taskgroup-dev-templates
+
+https://github.com/symphony-snippets/taskgroup-webdev-images
+https://github.com/symphony-snippets/taskgroup-webdev-sprites
+
+##Manage Build Tasks##
+https://github.com/symphony-snippets/taskgroup-dev-manager
+https://github.com/symphony-snippets/taskgroup-deploy-manager
+
+##NodeApp Tasks##
+https://github.com/symphony-snippets/taskgroup-dev-nodeapp
+
+
 
 This automated build is designed for brand sitefront development on the Symphony Commerce platform. A few tasks that this build handles:
 
