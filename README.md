@@ -6,7 +6,7 @@ All task groups include their own dependencies and all are configured by a "buil
 
 Some Example Build Tasks:
 
-##Brand Build Tasks##
+## Brand Build Tasks
 - https://github.com/symphony-snippets/taskgroup-new-brand
 
 ---> Sets up New Brand folder structure, creates brand-repo, creates symphony-api user
@@ -56,7 +56,7 @@ ___
 
 
 
-##Manage Build Tasks##
+## Manage Build Tasks
 - https://github.com/symphony-snippets/taskgroup-dev-manager
 
 ---> Bundles together manage angular JS, CSS, and BrowserSync
@@ -70,14 +70,14 @@ ___
 
 
 
-##NodeApp Tasks##
+## NodeApp Tasks
 - https://github.com/symphony-snippets/taskgroup-dev-nodeapp
 
 ---> Compiles Typescript => ES5 and runs tests / test coverage
 ___
 
 
-## Example circle.yml ##
+## Example "circle.yml" 
 
 ```
 machine:
@@ -107,7 +107,7 @@ deployment:
 ```
 
 
-### Example "build-config.json" ###
+## Example "build-config.json" 
 
 ```
 {
@@ -162,7 +162,10 @@ Most all task groups will include a "_sequence.gulp.js" file.  This is usually t
 
 Taskgroups are considered a "task" if they have ".gulp.js" in the name of their file.  If they do not have this, they are not registered as a task.
 
-To trigger s-build, you also need a "gulpfile.js" in your projects root directory...  It should looke like this:
+
+## Example "gulpfile.js"
+
+...for use in project root directory
 
 ```
 require("babel-register")({
