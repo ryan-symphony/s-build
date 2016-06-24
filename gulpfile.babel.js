@@ -1,4 +1,5 @@
 import _ from 'lodash';
+import chalk from 'chalk';
 import async from 'async';
 import moment from 'moment';
 import bulkRequire from 'bulk-require';
@@ -28,9 +29,9 @@ function execPromise(command, cwd) {
   return new Promise((resolve, reject) => {
     exec(command, { cwd: cwd }, (error, stdout, stderr) => {
       console.log("Running Command: ", command);
-      error &&  console.log("error", error);
-      stdout && console.log("stout", stdout);
-      stderr && console.log("stderr", stderr)
+      error &&  console.log(chalk.red(stderr));
+      stdout && console.log(chalk.yellow(stdout));
+      stderr && console.log(chalk.red(stderr))
       resolve();
     });
   });
