@@ -15,5 +15,7 @@
   },
   "SNIPPETS_URL": "https://github.com/symphony-snippets/",
   "BRANDS_URL": "https://github.com/symphony-brands/",
+  "INTEGRATIONS_URL": "https://github.com/symphony-integrations/",
+  "SC_URL": "https://github.com/symphony-commerce/",
   "MICRO_MANAGE": "https://symphony-micromanage.herokuapp.com/"
 }
