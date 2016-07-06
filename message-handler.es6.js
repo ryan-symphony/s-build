@@ -45,4 +45,4 @@ function handleMessage(message, messageType = "error") {
 
 
 export const messageHandler = handleMessage;
-export default () => plumber({ handleMessage });
+export default () => plumber({ errorHandler: handleMessage });
