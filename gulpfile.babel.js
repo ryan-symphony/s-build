@@ -104,9 +104,10 @@ gulp.task("install-tasks", done => {
 
     enabledTaskFiles.push(`${INIT_CWD}/build-tasks/${taskGroup}/*.gulp.js`);
     taskDependencies.push(`${INIT_CWD}/build-tasks/${taskGroup}/package.json`);
-
+    
+    const repo = taskDetails.repo ? taskDetails.repo : coreConfig.SNIPPETS_URL;
     cloneRepo({
-      url: `${coreConfig.SNIPPETS_URL}taskgroup-${taskGroup}`,
+      url: `${repo}taskgroup-${taskGroup}`,
       destination: `${INIT_CWD}/build-tasks/${taskGroup}`,
       version,
       branch,

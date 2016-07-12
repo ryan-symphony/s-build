@@ -67,7 +67,10 @@ ___
 ---> Runs tests and uploads manager HTML, CSS, JS to S3 via CircleCi 
 ___
 
+- https://github.com/symphony-snippets/taskgroup-dev-react
 
+---> Bundles React JS, JSX and loads on given Manage URL
+___
 
 
 ## NodeApp Tasks
