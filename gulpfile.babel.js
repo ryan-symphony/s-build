@@ -29,7 +29,7 @@ function execPromise(command, cwd) {
   return new Promise((resolve, reject) => {
     exec(command, { cwd: cwd }, (error, stdout, stderr) => {
       console.log("Running Command: ", command);
-      error &&  console.log(chalk.red(stderr));
+      error &&  console.log(chalk.red(stderr)) && process.exit(1);
       stdout && console.log(chalk.yellow(stdout));
       stderr && console.log(chalk.red(stderr))
       resolve();
