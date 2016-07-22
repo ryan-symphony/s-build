@@ -10,6 +10,10 @@ export default (repoDetails, done) => {
     if ((!version && !branch) || (version === true || branch === true)) {
       return done();
     }
+    
+    if (!repo) {
+      repo = git(destination);
+    }
 
     repo.checkout(version ? `tags/${version}` : branch, (err, repo) => {
       if (err) {
