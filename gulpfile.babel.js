@@ -31,7 +31,7 @@ function execPromise(command, cwd) {
       console.log("Running Command: ", command);
       error &&  console.log(chalk.red(stderr)) && process.exit(1);
       stdout && console.log(chalk.yellow(stdout));
-      stderr && console.log(chalk.red(stderr))
+      stderr && console.log(chalk.magenta(stderr))
       resolve();
     });
   });
