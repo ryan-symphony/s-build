@@ -32,7 +32,7 @@ function execPromise(command, cwd) {
       error &&  console.log(chalk.red(error)) && process.exit(1);
       stdout && console.log(chalk.yellow(stdout));
       stderr && console.log(chalk.magenta(stderr))
-      resolve();
+      resolve(stdout);
     });
   });
 }
@@ -192,8 +192,18 @@ gulp.task('git-branch', (done) => {
   });
 });
 
-/*gulp.task('test', () => {
-  return gulp.src(`${process.env.INIT_CWD}/test/test.spec.js`)
-  .pipe(PLUGINS.mocha())
-  .on('error', errorHandler);
-});*/
+gulp.task('npm-version', () => {
+  return execPromise('npm -v', INIT_CWD)
+  .then((version) => {
+    if (_.startsWith(version, '3')) {
+      return;
+    }
+
+    messageHandler({
+      plugin: "s-build",
+      relativePath: "npm-version",
+      formatted: "s-build Requires NPM Version 3\n" + 
+                 " run command: 'npm install npm@3 -g' and try again"
+    }, "fatal");
+  })
+});
