@@ -134,7 +134,8 @@ gulp.task('install-packages', ['install-tasks'], () => {
     `${SRC}/js/apps/*/package.json`,
     `${SRC}/js/pixels/*/package.json`,
     `${SRC}/tiles/*/package.json`,
-    `${SRC}/bower.json`
+    `${SRC}/bower.json`,
+    `${INIT_CWD}/bower.json`
   ];
 
   return gulp.src([
