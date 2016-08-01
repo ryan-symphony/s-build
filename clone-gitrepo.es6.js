@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import git from 'gift';
 
 export default (repoDetails, done) => {
@@ -15,7 +16,9 @@ export default (repoDetails, done) => {
       repo = git(destination);
     }
 
-    repo.checkout(version ? `tags/${version}` : branch, (err, repo) => {
+    const versionTag = version && _.startsWith(version, "v") ? `tags/${version}` : `tags/v${version}`;
+
+    repo.checkout(versionTag || branch, (err, repo) => {
       if (err) {
         console.log(err);
       }
@@ -24,4 +27,3 @@ export default (repoDetails, done) => {
     });
   });
 }
-
