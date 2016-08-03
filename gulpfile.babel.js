@@ -28,11 +28,9 @@ function requireJson(location) {
 function execPromise(command, cwd) {
   return new Promise((resolve, reject) => {
     exec(command, { cwd: cwd }, (error, stdout, stderr) => {
-      console.log("Running Command: ", command);
-      error &&  console.log(chalk.red(error)) && process.exit(1);
-      stdout && console.log(chalk.yellow(stdout));
-      stderr && console.log(chalk.magenta(stderr))
-      resolve(stdout);
+      console.log(chalk.blue(`Running Command: ${command}`));
+      error && console.log(chalk.red(error)) && reject(error);
+      stdout && console.log(chalk.yellow(stdout)) && resolve(stdout);
     });
   });
 }
