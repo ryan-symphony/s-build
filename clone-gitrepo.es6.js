@@ -16,8 +16,7 @@ export default (repoDetails, done) => {
       repo = git(destination);
     }
 
-    const versionTag = version && _.startsWith(version, "v") ? `tags/${version}` : `tags/v${version}`;
-
+    const versionTag = version && (_.startsWith(version, "v") ? `tags/${version}` : `tags/v${version}`);
     repo.checkout(versionTag || branch, (err, repo) => {
       if (err) {
         console.log(err);
