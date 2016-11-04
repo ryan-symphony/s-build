@@ -13,8 +13,6 @@ import cloneRepo from './clone-gitrepo.es6';
 import errorHandler from './message-handler.es6';
 import { messageHandler } from './message-handler.es6';
 
-import gulpYarn from 'gulp-yarn';
-
 function requireJson(location) {
   let thisJson = {};
 
