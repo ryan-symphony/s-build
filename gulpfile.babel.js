@@ -13,6 +13,8 @@ import cloneRepo from './clone-gitrepo.es6';
 import errorHandler from './message-handler.es6';
 import { messageHandler } from './message-handler.es6';
 
+import gulpYarn from 'gulp-yarn';
+
 function requireJson(location) {
   let thisJson = {};
 
@@ -151,7 +153,7 @@ gulp.task('install-packages', ['install-tasks'], () => {
     ...installDependencies,
     ...taskDependencies
   ])
-  .pipe(PLUGINS.install());
+  .pipe(PLUGINS.yarn());
 });
 
 gulp.task('register-tasks', ['install-tasks'], () => {
