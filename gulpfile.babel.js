@@ -151,7 +151,7 @@ gulp.task('install-packages', ['install-tasks'], () => {
     ...installDependencies,
     ...taskDependencies
   ])
-  .pipe(PLUGINS.yarn());
+  .pipe(PLUGINS.install());
 });
 
 gulp.task('register-tasks', ['install-tasks'], () => {
