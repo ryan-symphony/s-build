@@ -149,8 +149,6 @@ gulp.task('install-packages', ['install-tasks'], () => {
     `${INIT_CWD}/bower.json`
   ];
 
-  console.log(PLUGINS);
-
   return gulp.src([
     ...installDependencies,
     ...taskDependencies
