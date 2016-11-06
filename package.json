@@ -23,7 +23,6 @@
     "moment": "^2.12.0",
     "node-notifier": "^4.5.0",
     "node-symphony": "git+ssh://git@github.com/symphony-integrations/node-symphony.git",
-    "yarn": "^0.16.1",
     "yarn-installs": "^0.3.0"
   },
   "description": "Gulp Bootsrapping Module",

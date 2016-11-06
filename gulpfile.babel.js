@@ -12,8 +12,6 @@ import { exec } from 'child_process';
 import cloneRepo from './clone-gitrepo.es6';
 import errorHandler from './message-handler.es6';
 import { messageHandler } from './message-handler.es6';
-import yarn from 'yarn-installs';
-
 
 function requireJson(location) {
   let thisJson = {};
