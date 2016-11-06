@@ -13,8 +13,6 @@ import cloneRepo from './clone-gitrepo.es6';
 import errorHandler from './message-handler.es6';
 import { messageHandler } from './message-handler.es6';
 
-import yarn from 'yarn-installs';
-
 function requireJson(location) {
   let thisJson = {};
 
@@ -70,8 +68,10 @@ const { INIT_CWD, NODE_ENV, DEBUG_BUILD, ENV } = process.env,
       
       SITE_URL = ENV && BRAND_CONFIG[`${ENV}Url`] || PROD_URL,
       PLUGINS = gulpLoadPlugins({
+        pattern: ['gulp-*', 'gulp.*', 'yarn-*'],
         rename: {
-          'gulp-if': 'gulpif'
+          'gulp-if': 'gulpif',
+          'yarn-installs': 'install'
         }
       }),
 
@@ -133,8 +133,7 @@ gulp.task("install-tasks", done => {
       cloneRepo, 
       errorHandler, 
       messageHandler,
-      execPromise,
-      yarn
+      execPromise
     });
 
     done();
@@ -150,11 +149,13 @@ gulp.task('install-packages', ['install-tasks'], () => {
     `${INIT_CWD}/bower.json`
   ];
 
+  console.log(PLUGINS);
+
   return gulp.src([
     ...installDependencies,
     ...taskDependencies
   ])
-  .pipe(PLUGINS.yarn());
+  .pipe(PLUGINS.install());
 });
 
 gulp.task('register-tasks', ['install-tasks'], () => {
