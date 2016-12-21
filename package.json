@@ -9,7 +9,7 @@
     "chalk": "^1.1.3",
     "gift": "^0.7.0",
     "gulp": "^3.9.1",
-    "gulp-eslint": "^2.0.0",
+    "gulp-eslint": "^3.0.0",
     "gulp-if": "^2.0.0",
     "gulp-load-plugins": "^1.2.2",
     "gulp-mocha": "^2.2.0",
@@ -24,7 +24,10 @@
     "moment-timezone": "^0.5.9",
     "node-notifier": "^4.5.0",
     "node-symphony": "git+ssh://git@github.com/symphony-integrations/node-symphony.git",
-    "yarn-installs": "^0.3.0"
+    "yarn-installs": "^0.3.0",
+    "eslint": "^3.11.1",
+    "eslint-config-airbnb-base": "^10.0.1",
+    "eslint-plugin-import": "^2.2.0"
   },
   "description": "Gulp Bootsrapping Module",
   "devDependencies": {},
