@@ -24,10 +24,7 @@
     "moment-timezone": "^0.5.9",
     "node-notifier": "^4.5.0",
     "node-symphony": "git+ssh://git@github.com/symphony-integrations/node-symphony.git",
-    "yarn-installs": "^0.3.0",
-    "eslint": "^3.11.1",
-    "eslint-config-airbnb-base": "^10.0.1",
-    "eslint-plugin-import": "^2.2.0"
+    "yarn-installs": "^0.3.0"
   },
   "description": "Gulp Bootsrapping Module",
   "devDependencies": {},
