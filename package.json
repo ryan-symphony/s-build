@@ -21,6 +21,7 @@
     "jsonfile": "^2.3.0",
     "lodash": "^4.11.1",
     "moment": "^2.12.0",
+    "moment-timezone": "^0.5.9",
     "node-notifier": "^4.5.0",
     "node-symphony": "git+ssh://git@github.com/symphony-integrations/node-symphony.git",
     "yarn-installs": "^0.3.0"
